@@ -11,6 +11,12 @@ cin.tie(0);
 #define repp(i, m, n) for (int i = m; i < int(n); ++i)
 #define setp(n) << fixed << setprecision(n)
 #define all(v) v.begin(),v.end()
+void PerfectHeader() {
+    cout<<"\n\n";
+    cout<<"\t\t\t";
+    cout<<"Perfect Number List\n\t";
+    cout<<"________________________________\n";
+}
 int ReadPostiveNumber(string MSG) {
     int Number ;
     do {
@@ -35,19 +41,27 @@ PerfectNumber Perfect(int Number) {
         return PerfectNumber::notPerfectNum;
     }
 }
-void PrintPerfectNumber(PerfectNumber perfect , int Number) {
-    if (perfect) {
-        cout<<Number<<" is perfect\n";
-    }else {
-        cout<<Number<<" is not perfect\n";
+void PrintPerfectNumber() {
+    int Loop = ReadPostiveNumber("Enter Number Of Number you want to check : ");
+    PerfectHeader();
+    while (Loop --) {
+        int Number = ReadPostiveNumber("\t\t\tEnter Positive Number: ");
+        PerfectNumber perf;
+        perf = Perfect(Number);
+        cout<<"\t\t\t";
+        if (perf) {
+            cout<<"["<<Number<<"]"<<" is perfect\n";
+        }else {
+            cout<<"["<<Number<<"]"<<" is not perfect\n";
+        }
     }
 }
+
 
 int main() {
     srand((unsigned) time(NULL));
     ios_base::sync_with_stdio(0);
-    int Number = ReadPostiveNumber("Enter Positive Number: ");
-    PrintPerfectNumber(Perfect(Number),Number);
+    PrintPerfectNumber();
 
 
     return 0;
