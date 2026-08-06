@@ -1,0 +1,57 @@
+#include<bits/stdc++.h>
+#include<string>
+using namespace std;
+//Welcome Mohammed :0)
+#define fastio                        \
+ios_base::sync_with_stdio(false); \
+cin.tie(0);
+#define ll long long
+#define ld long double
+#define rep(i, n) for (int i = 0; i < int(n); ++i)
+#define repp(i, m, n) for (int i = m; i < int(n); ++i)
+#define setp(n) << fixed << setprecision(n)
+#define all(v) v.begin(),v.end()
+void PrimeNumbersHeader() {
+    cout<<"\n\n";
+    cout<<"\t\t\tPrime Numbers\n\n";
+    cout<<"________________________________________\n\n";
+}
+int ReadPositiveNumber(string MSG) {
+    int Number ;
+    do {
+
+        cout<<MSG<<'\n';
+        cin>>Number;
+
+    }while (Number <= 0);
+    return Number;
+}
+bool IsPrime(int Number) {
+    for (int count = 2 ; count < Number ; count++) {
+        if (Number % count == 0 )return false;
+    }
+    return true;
+}
+void PrimeNumbersFrom1toN(int Number) {
+    PrimeNumbersHeader();
+    int count = 1;
+    for (int i = 2 ; i<= Number ;i++) {
+        if (IsPrime(i)) {
+            cout<<"\t["<<(count)<<"] ";
+            cout<<"\t\t"<<i<<"\t : Is Prime Number\n";
+            count++;
+
+        }
+    }
+}
+
+
+int main() {
+    srand((unsigned) time(NULL));
+    ios_base::sync_with_stdio(0);
+    int Number = ReadPositiveNumber("Enter Positive Number : ");
+    PrimeNumbersFrom1toN(Number);
+
+
+    return 0;
+}
