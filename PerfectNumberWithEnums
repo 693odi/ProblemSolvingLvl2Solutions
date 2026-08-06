@@ -1,0 +1,54 @@
+#include<bits/stdc++.h>
+#include<string>
+using namespace std;
+//Welcome Mohammed :0)
+#define fastio                        \
+ios_base::sync_with_stdio(false); \
+cin.tie(0);
+#define ll long long
+#define ld long double
+#define rep(i, n) for (int i = 0; i < int(n); ++i)
+#define repp(i, m, n) for (int i = m; i < int(n); ++i)
+#define setp(n) << fixed << setprecision(n)
+#define all(v) v.begin(),v.end()
+int ReadPostiveNumber(string MSG) {
+    int Number ;
+    do {
+        cout<<MSG<<'\n';
+        cin>>Number;
+
+    }while (Number <= 0);
+    return Number;
+}
+enum PerfectNumber{PerfectNum = 1 , notPerfectNum = 0};
+PerfectNumber Perfect(int Number) {
+    int Sum = 0 ;
+    for (int i = 1 ; i <= floor(Number/2) ; i++) {
+        if (Number % i == 0) {
+            Sum = Sum + i;
+        }
+    }
+
+    if (Sum == Number) {
+        return PerfectNumber::PerfectNum;
+    }else {
+        return PerfectNumber::notPerfectNum;
+    }
+}
+void PrintPerfectNumber(PerfectNumber perfect , int Number) {
+    if (perfect) {
+        cout<<Number<<" is perfect\n";
+    }else {
+        cout<<Number<<" is not perfect\n";
+    }
+}
+
+int main() {
+    srand((unsigned) time(NULL));
+    ios_base::sync_with_stdio(0);
+    int Number = ReadPostiveNumber("Enter Positive Number: ");
+    PrintPerfectNumber(Perfect(Number),Number);
+
+
+    return 0;
+}
