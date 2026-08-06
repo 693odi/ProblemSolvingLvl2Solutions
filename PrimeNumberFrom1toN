@@ -27,7 +27,7 @@ int ReadPositiveNumber(string MSG) {
     return Number;
 }
 bool IsPrime(int Number) {
-    for (int count = 2 ; count < Number ; count++) {
+    for (int count = 2 ; count <= round(Number/2) ; count++) {
         if (Number % count == 0 )return false;
     }
     return true;
