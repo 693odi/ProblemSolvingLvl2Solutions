@@ -1,0 +1,49 @@
+#include<bits/stdc++.h>
+#include<string>
+using namespace std;
+//Welcome Mohammed :0)
+#define fastio                        \
+ios_base::sync_with_stdio(false); \
+cin.tie(0);
+#define ll long long
+#define ld long double
+#define rep(i, n) for (int i = 0; i < int(n); ++i)
+#define repp(i, m, n) for (int i = m; i < int(n); ++i)
+#define setp(n) << fixed << setprecision(n)
+#define all(v) v.begin(),v.end()
+
+
+int ReadPositiveNumber(string msg) {
+    int Number ;
+    do {
+
+        cout<<msg<<endl;
+        cin>>Number;
+
+    }while (Number <= 0 );
+    return Number;
+}
+
+int DigitFrequency(int Number , int Digit) {
+
+    int Count = 0 ;
+    while ( Number > 0 ) {
+        if ((Number % 10) == Digit) {
+            ++Count;
+        }
+        Number = Number / 10;
+    }
+    return Count;
+
+}
+
+
+int main() {
+    srand((unsigned) time(NULL));
+    ios_base::sync_with_stdio(0);
+    int Number = ReadPositiveNumber("Enter Positive Number : ");
+    int Digit = ReadPositiveNumber("Enter The Digit : ");
+    cout<<DigitFrequency(Number,Digit )<<'\n';
+
+    return 0;
+}
