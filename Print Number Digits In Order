@@ -1,0 +1,56 @@
+#include<bits/stdc++.h>
+#include<string>
+using namespace std;
+//Welcome Mohammed :0)
+#define fastio                        \
+ios_base::sync_with_stdio(false); \
+cin.tie(0);
+#define ll long long
+#define ld long double
+#define rep(i, n) for (int i = 0; i < int(n); ++i)
+#define repp(i, m, n) for (int i = m; i < int(n); ++i)
+#define setp(n) << fixed << setprecision(n)
+#define all(v) v.begin(),v.end()
+
+
+int ReadPositiveNumber(string msg) {
+    int Number ;
+    do {
+
+        cout<<msg<<endl;
+        cin>>Number;
+
+    }while (Number <= 0 );
+    return Number;
+}
+
+int ReverseNumber(int Number) {
+
+    int newRevNumber = 0 ;
+
+    while ( Number > 0 ) {
+        newRevNumber = (newRevNumber*10) + (Number %10);
+        Number = Number / 10;
+    }
+
+    return newRevNumber;
+}
+
+void PrintNumberInReversedOrder(int ReveresdNumber) {
+
+    while ( ReveresdNumber > 0 ) {
+        cout<<ReveresdNumber%10;
+        ReveresdNumber = ReveresdNumber / 10;
+        cout<<'\n';
+    }
+
+}
+
+
+
+int main() {
+    srand((unsigned) time(NULL));
+    ios_base::sync_with_stdio(0);
+    PrintNumberInReversedOrder(ReverseNumber(ReadPositiveNumber("Enter Positive Number")));
+    return 0;
+}
