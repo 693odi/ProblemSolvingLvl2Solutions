@@ -1,0 +1,45 @@
+#include<bits/stdc++.h>
+#include<string>
+using namespace std;
+//Welcome Mohammed :0)
+#define fastio                        \
+ios_base::sync_with_stdio(false); \
+cin.tie(0);
+#define ll long long
+#define ld long double
+#define rep(i, n) for (int i = 0; i < int(n); ++i)
+#define repp(i, m, n) for (int i = m; i < int(n); ++i)
+#define setp(n) << fixed << setprecision(n)
+#define all(v) v.begin(),v.end()
+
+
+int ReadPositiveNumber(string msg) {
+    int Number ;
+    do {
+
+        cout<<msg<<endl;
+        cin>>Number;
+
+    }while (Number <= 0 );
+    return Number;
+}
+
+int Digits_Sum(int Number) {
+    int Sum = 0 ;
+    while (Number > 0 ) {
+        Sum = Sum + (Number % 10);
+        Number = Number / 10;
+    }
+    return Sum;
+}
+
+
+int main() {
+    srand((unsigned) time(NULL));
+    ios_base::sync_with_stdio(0);
+    int Number = ReadPositiveNumber("Enter Positive Number: ");
+    cout<<"Sum of "<< Number <<" Digits is : "<<Digits_Sum(Number)<<endl;
+
+
+    return 0;
+}
