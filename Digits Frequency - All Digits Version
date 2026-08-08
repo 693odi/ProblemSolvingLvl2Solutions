@@ -24,7 +24,7 @@ int ReadPositiveNumber(string msg) {
     return Number;
 }
 
-int DigitFrequenct(int Number , int Digit) {
+int DigitFrequency(int Number , int Digit) {
     int Count = 0;
     while (Number > 0) {
         if ((Number % 10) == Digit)
@@ -36,7 +36,7 @@ int DigitFrequenct(int Number , int Digit) {
 
 void DigitsFrequency(int Number) {
     for (int i = 1 ; i <= 9 ;i++) {
-        short Counter = DigitFrequenct(Number,i);
+        short Counter = DigitFrequency(Number,i);
         if (Counter > 0 ) {
             cout<<"Digit "<< i <<" Frequency is : "<<Counter<<" Time(s)\n";
         }
