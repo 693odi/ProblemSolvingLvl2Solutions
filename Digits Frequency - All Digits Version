@@ -35,7 +35,7 @@ int DigitFrequency(int Number , int Digit) {
 }
 
 void DigitsFrequency(int Number) {
-    for (int i = 1 ; i <= 9 ;i++) {
+    for (int i = 0 ; i <= 9 ;i++) {
         short Counter = DigitFrequency(Number,i);
         if (Counter > 0 ) {
             cout<<"Digit "<< i <<" Frequency is : "<<Counter<<" Time(s)\n";
