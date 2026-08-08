@@ -42,8 +42,7 @@ bool isPalindrome(int firNumber , int RevFirstNumber) {
 void PrintAllInfo() {
 
     int FirstNumber = ReadPositiveNumber("Enter Positive Number : ");
-    int RevFirstNumber = ReverseNumber(FirstNumber);
-    if (isPalindrome(FirstNumber,RevFirstNumber)) {
+    if (isPalindrome(FirstNumber,ReverseNumber(FirstNumber))) {
         cout<<"Yes , It's A Palindrom Number\n";
     }else {
         cout<<"No , It's Not A Palindrom Number\n";
