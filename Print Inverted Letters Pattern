@@ -19,7 +19,7 @@ char ReadPositiveNumber(string msg) {
         cout<<msg<<endl;
         cin>>Number;
 
-    }while (Number <= 0);
+    }while (Number <= 0 || Number > 26);
 
     return (char) (Number + 64) ;
 }
