@@ -1,0 +1,64 @@
+#include<bits/stdc++.h>
+#include<string>
+using namespace std;
+//Welcome Mohammed :0)
+#define fastio                        \
+ios_base::sync_with_stdio(false); \
+cin.tie(0);
+#define ll long long
+#define ld long double
+#define rep(i, n) for (int i = 0; i < int(n); ++i)
+#define repp(i, m, n) for (int i = m; i < int(n); ++i)
+#define setp(n) << fixed << setprecision(n)
+#define all(v) v.begin(),v.end()
+
+enum isPrime{Prime = 1 , notPrime = 0};
+isPrime is_Prime(int Number) {
+    if (Number <= 1 ) return isPrime::notPrime;
+    for (int i = 2 ; i<=round(Number/2) ; i++ ) {
+        if (Number % i == 0) {
+            return isPrime::notPrime;
+        }
+    }
+    return isPrime::Prime;
+}
+int RandomNumber(int From , int To) {
+    return rand()%(To - From + 1 ) + From;
+}
+void BulidTheArray(int arr[100] , int& arrLength) {
+    cout << "Enter The Array Length : ";
+    cin >> arrLength;
+    for (int i = 0 ; i < arrLength ; i++) {
+        arr[i] = RandomNumber(1,100);
+    }
+}
+void CopyPrimeArray(int arr1[100] , int arr2[100], int& arr1Length , int& arr2Length) {
+    arr2Length = 0;
+    for (int i  = 0 ; i < arr1Length ; i++) {
+        if (is_Prime(arr1[i]) == isPrime::Prime) {
+            arr2[arr2Length] = arr1[i];
+            arr2Length++;
+        }
+    }
+}
+void PrintTheArray(int arr[100] , int arrLength) {
+    for (int i = 0 ; i < arrLength ; i++) {
+        cout<<arr[i]<<" ";
+    }
+}
+
+int main() {
+    srand((unsigned) time(NULL));
+    ios_base::sync_with_stdio(0);
+    int arr1[100] , arr2[100];
+    int arr1Length , arr2Length;
+    BulidTheArray(arr1, arr1Length);
+    CopyPrimeArray(arr1, arr2 , arr1Length , arr2Length);
+    cout<<"Array 1 Elements : \n";
+    PrintTheArray(arr1, arr1Length);
+    cout<<"\n\nArray 2 Prime Elements : \n";
+    PrintTheArray(arr2, arr2Length);
+
+
+    return 0;
+}
