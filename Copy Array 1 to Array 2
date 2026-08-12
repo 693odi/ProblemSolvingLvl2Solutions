@@ -1,0 +1,54 @@
+#include<bits/stdc++.h>
+#include<string>
+using namespace std;
+//Welcome Mohammed :0)
+#define fastio                        \
+ios_base::sync_with_stdio(false); \
+cin.tie(0);
+#define ll long long
+#define ld long double
+#define rep(i, n) for (int i = 0; i < int(n); ++i)
+#define repp(i, m, n) for (int i = m; i < int(n); ++i)
+#define setp(n) << fixed << setprecision(n)
+#define all(v) v.begin(),v.end()
+
+
+int RandomNumbers(int From = 1, int To = 100) {
+    return rand()%(To - From + 1) + From;
+}
+void BulidTheArray(int array[100], int& arrLength) {
+    cout<<"Enter a Number : ";
+    cin>>arrLength;
+    for (int i = 0 ; i < arrLength ; i++) {
+        array[i] = RandomNumbers(1,100);
+    }
+}
+void CopyTheArray1toArray2(int arr1[100] , int arr2[100] , int arrLength) {
+    for (int i = 0 ; i < arrLength; i++) {
+        arr2[i] = arr1[i];
+    }
+}
+void PrintTheArray(int array[100] ,int arrLength) {
+    for (int i = 0 ; i < arrLength; i++) {
+        cout<<array[i]<<" ";
+    }
+}
+
+int main() {
+    srand((unsigned) time(NULL));
+    ios_base::sync_with_stdio(0);
+    int array1[100], array2[100] , arrLength;
+    BulidTheArray(array1,arrLength);
+    CopyTheArray1toArray2(array1,array2 ,arrLength);
+    cout<<"Array 1 Elements : \n\n";
+    PrintTheArray(array1,arrLength);
+    cout<<"\n\nArray 2 Elements after copy : \n\n";
+    PrintTheArray(array2,arrLength);
+
+
+
+
+
+
+    return 0;
+}
