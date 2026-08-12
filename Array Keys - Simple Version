@@ -1,0 +1,61 @@
+#include<bits/stdc++.h>
+#include<string>
+using namespace std;
+//Welcome Mohammed :0)
+#define fastio                        \
+ios_base::sync_with_stdio(false); \
+cin.tie(0);
+#define ll long long
+#define ld long double
+#define rep(i, n) for (int i = 0; i < int(n); ++i)
+#define repp(i, m, n) for (int i = m; i < int(n); ++i)
+#define setp(n) << fixed << setprecision(n)
+#define all(v) v.begin(),v.end()
+
+int RandomNumber(int From , int To) {
+    return rand()%(To - From + 1 ) + From;
+}
+string SingleKey() {
+    string singleKey = "";
+    for (int i = 0 ; i < 4 ; i ++) {
+        singleKey = singleKey + char(RandomNumber(65 , 90));
+    }
+    return singleKey;
+}
+string GenerateWholeKey() {
+    string key = "";
+    for (int i = 0 ; i < 4 ; i++) {
+        key = key + SingleKey();
+        if (i < 3) {
+            key = key + '-';
+        }
+    }
+    return key;
+}
+void FillArrayWithKeys(string arr[100], int& arrLength) {
+    cout<<"How many keys do you want?\n";
+    cin>>arrLength;
+    for (int i = 0 ; i < arrLength ; i++) {
+        arr[i] = GenerateWholeKey();
+    }
+}
+void PrintTheArray(string arr[100], int arrLength) {
+    for (int i = 0 ; i < arrLength ; i++) {
+        cout<<"Array["<<i<<"] : "<<GenerateWholeKey()<<"\n";
+    }
+}
+
+
+int main() {
+    srand((unsigned) time(NULL));
+    ios_base::sync_with_stdio(0);
+    string arr[100];
+    int arrLength;
+    FillArrayWithKeys(arr,arrLength);
+    PrintTheArray(arr,arrLength);
+
+
+
+
+    return 0;
+}
