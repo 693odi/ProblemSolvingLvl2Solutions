@@ -1,0 +1,51 @@
+#include<bits/stdc++.h>
+#include<string>
+using namespace std;
+//Welcome Mohammed :0)
+#define fastio                        \
+ios_base::sync_with_stdio(false); \
+cin.tie(0);
+#define ll long long
+#define ld long double
+#define rep(i, n) for (int i = 0; i < int(n); ++i)
+#define repp(i, m, n) for (int i = m; i < int(n); ++i)
+#define setp(n) << fixed << setprecision(n)
+#define all(v) v.begin(),v.end()
+
+int RandomNumber(int From = 1  , int To = 100) {
+    return rand()%(To - From + 1 )+ From;
+}
+void FillArrayRandomly(int array [100] , int& length){
+    for (int i = 0 ; i <length ;i++) {
+        array[i] = RandomNumber();
+    }
+}
+void PrintArrayElements(int array[100], int length) {
+    cout<<"Array Elements : ";
+    for (int i = 0 ; i < length ; i++) {
+        cout<<array[i]<<" " ;
+    }
+}
+int ReadPositiveNumber(string msg) {
+    int Number ;
+    do {
+
+        cout<<msg<<'\n';
+        cin>>Number;
+
+    }while (Number <= 0);
+    return Number;
+}
+
+int main() {
+    srand((unsigned) time(NULL));
+    ios_base::sync_with_stdio(0);
+    int arr[100];
+    int length = ReadPositiveNumber("Enter The Number : ");
+    FillArrayRandomly(arr,length);
+    PrintArrayElements(arr,length);
+
+
+
+    return 0;
+}
