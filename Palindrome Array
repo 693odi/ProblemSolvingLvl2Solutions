@@ -1,0 +1,62 @@
+#include<bits/stdc++.h>
+#include<string>
+using namespace std;
+//Welcome Mohammed :0)
+#define fastio                        \
+ios_base::sync_with_stdio(false); \
+cin.tie(0);
+#define ll long long
+#define ld long double
+#define rep(i, n) for (int i = 0; i < int(n); ++i)
+#define repp(i, m, n) for (int i = m; i < int(n); ++i)
+#define setp(n) << fixed << setprecision(n)
+#define all(v) v.begin(),v.end()
+
+
+int ReadPositiveNumber(string msg) {
+    int Number ;
+    do {
+        cout<<msg<<'\n';
+        cin>>Number;
+    }while (Number <= 0);
+    return Number;
+}
+void BuildTheArray(int arr[100], int& arrLength) {
+    arrLength = ReadPositiveNumber("Enter Size of array ? ");
+    for (int i = 0 ; i < arrLength; i++) {
+        arr[i] = ReadPositiveNumber("");
+    }
+}
+bool isPalindrome(int arr[100], int arrLength) {
+    bool flag = true;
+    for (int i = 0 ; i < arrLength ;i++) {
+        if (arr[i] != arr[arrLength - 1 - i ]) {
+            return flag;
+        }
+    }
+    return flag;
+}
+void PrintTheArray(int arr[100], int arrLength) {
+    for (int i = 0 ; i < arrLength; i++) {
+        cout<<arr[i]<<" ";
+    }
+}
+
+int main() {
+    srand((unsigned) time(NULL));
+    ios_base::sync_with_stdio(0);
+    int arr[100] , arrLength;
+    BuildTheArray(arr,arrLength);
+    cout<<"Array Elements : \n";
+    PrintTheArray(arr,arrLength);
+    if (isPalindrome(arr,arrLength)) {
+        cout<<"\nYes , array is Palindrome";
+    }else {
+        cout<<"\nNo , array is not Palindrome";
+    }
+
+
+
+
+    return 0;
+}
