@@ -1,0 +1,60 @@
+#include<bits/stdc++.h>
+#include<string>
+using namespace std;
+//Welcome Mohammed :0)
+#define fastio                        \
+ios_base::sync_with_stdio(false); \
+cin.tie(0);
+#define ll long long
+#define ld long double
+#define rep(i, n) for (int i = 0; i < int(n); ++i)
+#define repp(i, m, n) for (int i = m; i < int(n); ++i)
+#define setp(n) << fixed << setprecision(n)
+#define all(v) v.begin(),v.end()
+
+int RandomNumber(int From , int To) {
+    return rand()%(To - From + 1 ) + From;
+}
+enum NumberStatus{Odd = 1 , Even = 2 };
+NumberStatus Num(int Number) {
+    if (Number % 2 == 0) {
+        return NumberStatus::Even;
+    }
+    return NumberStatus::Odd;
+}
+void BuildTheArray(int arr[100] , int& arrLength) {
+    cout<<"Enter Size Of The Array ?\n";
+    cin>>arrLength;
+    for (int i = 0 ; i < arrLength ; i++) {
+        arr[i] = RandomNumber(1,100);
+    }
+}
+int CounterEvenNumbers(int arr[100] , int arrLength) {
+    int Count =  0;
+    for (int i = 0 ; i< arrLength ; i++) {
+        if (Num(arr[i]) == NumberStatus::Even) {
+            Count ++;
+        }
+    }
+    return Count;
+}
+void PrintTheArray(int arr[100], int arrLength) {
+    for (int i = 0 ; i < arrLength; i++) {
+        cout<<arr[i]<<" ";
+    }
+}
+
+
+int main() {
+    srand((unsigned) time(NULL));
+    ios_base::sync_with_stdio(0);
+    int arr[100], arrLength;
+    BuildTheArray(arr,arrLength);
+    cout<<"Array Elements : \n";
+    PrintTheArray(arr,arrLength);
+    cout<<"\n\nEven Numbers count is : "<<CounterEvenNumbers(arr,arrLength);
+
+
+
+    return 0;
+}
