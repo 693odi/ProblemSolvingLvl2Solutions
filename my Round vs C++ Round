@@ -1,0 +1,52 @@
+#include<bits/stdc++.h>
+#include<string>
+using namespace std;
+//Welcome Mohammed :0)
+#define fastio                        \
+ios_base::sync_with_stdio(false); \
+cin.tie(0);
+#define ll long long
+#define ld long double
+#define rep(i, n) for (int i = 0; i < int(n); ++i)
+#define repp(i, m, n) for (int i = m; i < int(n); ++i)
+#define setp(n) << fixed << setprecision(n)
+#define all(v) v.begin(),v.end()
+
+float ReadNumber(string msg) {
+    float Number ;
+    cout<<msg<<'\n';
+    cin>>Number;
+    return Number;
+}
+
+float GetFraction(float Number) {
+    int myNumber = Number;
+    return (Number - myNumber);
+}
+
+int myRound(float Number) {
+    if (Number > 0) {
+        if (GetFraction(Number) >= 0.5) {
+            return (int) Number + 1 ;
+        }else {
+            return (int) Number;
+        }
+    }
+    if (Number < 0 ) {
+        if (GetFraction(Number) <= -0.5) {
+            return (int) Number - 1;
+        }else {
+            return (int) Number;
+        }
+    }
+}
+int main() {
+    srand((unsigned) time(NULL));
+    ios_base::sync_with_stdio(0);
+    float Number = ReadNumber("Enter a number : ");
+    cout<<"My Round Function : "<<myRound(Number)<<'\n';
+    cout<<"C++ Round Function : "<<round(Number)<<'\n';
+
+
+    return 0;
+}
